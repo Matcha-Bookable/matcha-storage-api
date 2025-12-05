@@ -48,7 +48,7 @@ exports.uploadLog = async (req, res) => {
         }
 
         // Behind proxy
-        const sourceAddress = req.headers.split(",", headers["X-Forwarded-For"])[-1] || req.ip || req.connection.remoteAddress
+        const sourceAddress = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip || req.connection.remoteAddress
 
         const bucketName = process.env.R2_LOG_BUCKET
         const storagePath = `${bookingID}/${fileName}`
