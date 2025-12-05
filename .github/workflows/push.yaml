@@ -63,10 +63,10 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --set-env-vars '
-                MONGO_URI="${{ secrets.MONGO_URI }}",
-                R2_LOG_BUCKET="${{ secrets.R2_LOG_BUCKET }}",
-                R2_DEMO_BUCKET="${{ secrets.R2_DEMO_BUCKET }}",
-                R2_ACCOUNT_ID="${{ secrets.R2_ACCOUNT_ID }}",
-                R2_ACCESS_KEY_ID="${{ secrets.R2_ACCESS_KEY_ID }}",
-                R2_SECRET_ACCESS_KEY="${{ secrets.R2_SECRET_ACCESS_KEY }}"
+                MONGO_URI=${{ secrets.MONGO_URI }},
+                R2_LOG_BUCKET=${{ secrets.R2_LOG_BUCKET }},
+                R2_DEMO_BUCKET=${{ secrets.R2_DEMO_BUCKET }},
+                R2_ACCOUNT_ID=${{ secrets.R2_ACCOUNT_ID }},
+                R2_ACCESS_KEY_ID=${{ secrets.R2_ACCESS_KEY_ID }},
+                R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }}
             '
