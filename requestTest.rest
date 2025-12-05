@@ -1,5 +1,6 @@
 @token = 
 @url = 
+
 ### List all logs
 GET {{url}}/api/logs HTTP/1.1
 Authorization: Bearer {{token}}
