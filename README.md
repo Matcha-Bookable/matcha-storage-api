@@ -5,7 +5,7 @@ This is a microservice which will handle Matcha Bookable's logs and demos storag
 > This is one of the first project I've used JavaScript for, so beware of bad codes
 
 ## Endpoints
-- `GET /health` - Health Check
+- `GET /api/health` - Health Check
 - `GET /api/logs` - Retrieve all logs' metadatas.
 - `GET /api/logs/:id/metadata` - Retrieve the log's metadata
 - `POST /api/logs` - Upload a log

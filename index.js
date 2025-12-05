@@ -10,7 +10,7 @@ const User = require("./models/User")
 const app = express()
 const port = process.env.PORT || 8080
 
-app.use("/health", healthRoutes)
+app.use("/api/health", healthRoutes)
 app.use("/api/logs", logsRoutes)
 // app.use("/api/demos", demosRoutes)
 
