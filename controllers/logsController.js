@@ -47,7 +47,8 @@ exports.uploadLog = async (req, res) => {
             return res.status(400).json({ status: "error", message: "File size should be between 1 byte and 10 MB" })
         }
 
-        const sourceAddress = req.ip || req.connection.remoteAddress
+        // Behind proxy
+        const sourceAddress = req.headers.split(",", headers["X-Forwarded-For"])[-1] || req.ip || req.connection.remoteAddress
 
         const bucketName = process.env.R2_LOG_BUCKET
         const storagePath = `${bookingID}/${fileName}`
