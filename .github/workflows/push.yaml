@@ -1,0 +1,72 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.js'
+      - 'Dockerfile'
+      - '.github/workflows/push.yaml'
+
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Optional image tag (defaults to commit SHA)'
+        required: false
+        default: ''
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: 'Google Cloud Authenication'
+        uses: 'google-github-actions/auth@v2'
+        with:
+            credentials_json: '${{ secrets.MATCHA_GCP_SERVICE_ACCOUNT }}'
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ vars.MATCHA_GCP_PROJECT_ID }}
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ vars.MATCHA_GCP_ARTIFACT_REGISTRY }}
+
+      - name: Set image tag
+        id: vars
+        run: |
+          if [ -z "${{ github.event.inputs.tag }}" ]; then
+            echo "TAG=${GITHUB_SHA}" >> $GITHUB_OUTPUT
+          else
+            echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ vars.MATCHA_GCP_ARTIFACT_REGISTRY }}/${{ vars.MATCHA_GCP_PROJECT_ID }}/matcha-storage-api/matcha-storage-api:${{ steps.vars.outputs.TAG }} .
+
+      - name: Push Docker image to Artifact Registry
+        run: |
+          docker push ${{ vars.MATCHA_GCP_ARTIFACT_REGISTRY }}/${{ vars.MATCHA_GCP_PROJECT_ID }}/matcha-storage-api/matcha-storage-api:${{ steps.vars.outputs.TAG }}
+
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy matcha-storage-api \
+            --image ${{ vars.MATCHA_GCP_ARTIFACT_REGISTRY }}/${{ vars.MATCHA_GCP_PROJECT_ID }}/matcha-storage-api/matcha-storage-api:${{ steps.vars.outputs.TAG }} \
+            --region asia-east1 \
+            --platform managed \
+            --allow-unauthenticated \
+            --set-env-vars '
+                MONGO_URI="",
+                R2_LOG_BUCKET="",
+                R2_DEMO_BUCKET="",
+                R2_ACCOUNT_ID="",
+                R2_ACCESS_KEY_ID="",
+                R2_SECRET_ACCESS_KEY=""
+            '
