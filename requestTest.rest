@@ -1,7 +1,8 @@
 @token = 
+@url = 
 
 ### List all logs
-GET http://172.30.11.12:8080/api/logs HTTP/1.1
+GET {{url}}/api/logs HTTP/1.1
 Authorization: Bearer {{token}}
 
 
@@ -9,7 +10,7 @@ Authorization: Bearer {{token}}
 
 ### Upload a file test
 # @name postUpload
-POST http://172.30.11.12:8080/api/logs HTTP/1.1
+POST {{url}}/api/logs HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
@@ -32,5 +33,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a
 
 
 ### Delete the sample file
-DELETE http://172.30.11.12:8080/api/logs/{{sampleID}} HTTP/1.1
+DELETE {{url}}/api/logs/{{sampleID}} HTTP/1.1
 Authorization: Bearer {{token}}
