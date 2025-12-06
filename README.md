@@ -10,3 +10,4 @@ This is a microservice which will handle Matcha Bookable's logs and demos storag
 - `GET /api/logs/:id/metadata` - Retrieve the log's metadata
 - `POST /api/logs` - Upload a log
 - `DELETE /api/logs/:id` - Delete a log
+- `DELETE /api/booking/:id` - Delete all logs from a bookingID

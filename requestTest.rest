@@ -5,9 +5,6 @@
 GET {{url}}/api/logs HTTP/1.1
 Authorization: Bearer {{token}}
 
-
-
-
 ### Upload a file test
 # @name postUpload
 POST {{url}}/api/logs HTTP/1.1
@@ -27,11 +24,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a
 
 @sampleID = {{postUpload.response.body.log._id}}
 
-
-
-
-
-
 ### Delete the sample file
 DELETE {{url}}/api/logs/{{sampleID}} HTTP/1.1
+Authorization: Bearer {{token}}
+
+### Delete all sample
+DELETE {{url}}/api/booking/123456789 HTTP/1.1
 Authorization: Bearer {{token}}
