@@ -16,7 +16,11 @@ const logSchema = new mongoose.Schema({
         min: 1, // minimum 1 byte
         max: 10000000 // maximum 10 MB 
     },
-    storagePath: { type: String, required: true},
+    storagePath: { 
+        type: String,
+        required: true,
+        unique: true // should never have 2 documents in the same path
+    },
     uploadDate: { type: Date, required: true}
 })
 

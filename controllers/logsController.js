@@ -55,7 +55,8 @@ exports.uploadLog = async (req, res) => {
         
         await uploadObject(bucketName, storagePath, fileContent)
 
-        const newLog = new Log({
+        try {
+            const newLog = new Log({
             bookingID: parseInt(bookingID),
             logName: fileName,
             sourceAddress: sourceAddress,
@@ -64,7 +65,10 @@ exports.uploadLog = async (req, res) => {
             uploadDate: new Date()
         })
 
-        await newLog.save()
+            await newLog.save()
+        } catch (DuplicateKeyError) {
+            return res.status(409).json({ status: "error", message: "document already exists" }) 
+        }
 
         return res.status(201).json({
             status: "success",
@@ -112,6 +116,30 @@ exports.deleteLog = async (req, res) => {
     } catch (error) {
         console.log(error)
         return res.status(500).json({ status: "error", message: "Failed to delete log" })
+    }
+}
+
+exports.deleteBooking = async (req, res) => {
+    try {
+        const id = req.params.id
+
+        const logs = await Log.find({ bookingID: id })
+
+        if (logs.length == 0) {
+            return res.status(404).json({ status: "error", message: "No logs found for this bookingID" })
+        }
+
+        for (const log of logs) {
+            await deleteObject(process.env.R2_LOG_BUCKET, log.storagePath)
+        }
+
+        await Log.deleteMany({ bookingID: id })
+
+        return res.status(200).json({ status: "success", message: `Deleted all logs for bookingID: ${id}` })
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: "error", message: "Failed to booking logs" })
     }
 }
 
