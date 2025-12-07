@@ -79,9 +79,9 @@ exports.uploadDemo = async (req, res) => {
         }
 
         // validate the file size
-        if (size > 200000000) {
-            return res.status(400).json({ status: "error", message: "File size should be less than and 200 MB" })
-        }
+        // if (size > 200000000 || size < 5000000) {
+        //     return res.status(400).json({ status: "error", message: "File size should be between 5MB and 200 MB" })
+        // }
 
         // Behind proxy
         const sourceAddress = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip || req.connection.remoteAddress
