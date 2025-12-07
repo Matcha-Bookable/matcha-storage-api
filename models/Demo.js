@@ -17,7 +17,11 @@ const demoSchema = new mongoose.Schema({
         max: 100000000 // maximum 100 MB 
     },
     storagePath: { type: String, required: true},
-    uploadDate: { type: Date, required: true}
+    uploadDate: { type: Date, required: true},
+    parsed: {
+        type: mongoose.Schema.Types.Mixed,
+        required: false
+    }
 })
 
 module.exports = mongoose.model("Demo", demoSchema)

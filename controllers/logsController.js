@@ -9,13 +9,13 @@ exports.getAllLogs = async (req, res) => {
             return res.status(404).json({
                 status: "success",
                 message: "Logs are not populated yet",
-                log: logs
+                logs: logs
             })
         }
         else {
             return res.status(200).json({
                 status: "success",
-                log: logs
+                logs: logs
             })
         }
 
@@ -83,7 +83,7 @@ exports.uploadLog = async (req, res) => {
 
 exports.getLog = async (req, res) => {
     try {
-        const log = await Log.findById(req.params.id);
+        const log = await Log.findById(req.params.id)
 
         if (log.length == 0) {
             return res.status(404).json(log)

@@ -1,0 +1,1762 @@
+{
+  "header": {
+    "demo_type": "HL2DEMO",
+    "version": 3,
+    "protocol": 24,
+    "server": "Matcha Bookable",
+    "nick": "SourceTV Demo",
+    "map": "cp_metalworks_f5",
+    "game": "tf",
+    "duration": 1814.0399,
+    "ticks": 120936,
+    "frames": 120919,
+    "signon": 1018250
+  },
+  "chat": [
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "[demos.tf]: Demo recording completed",
+      "tick": 1
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "[demos.tf]: Uploading demo auto-20251207-1140-cp_process_f12.dem",
+      "tick": 207
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "Overrode round timer time to 240 seconds",
+      "tick": 334
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Please make sure your POV is being recorded, Good luck and have fun!",
+      "tick": 334
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Current Score: BLU 0, RED 0.",
+      "tick": 334
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] 30:00 remaining; starting round 1.",
+      "tick": 334
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "[demos.tf]: Demos must be at least 5 minutes long",
+      "tick": 386
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU lost their uber advantage of 10 seconds",
+      "tick": 5187
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 138 seconds before using it",
+      "tick": 13800
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 178 seconds before using it",
+      "tick": 17046
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "Overrode round timer time to 240 seconds",
+      "tick": 20957
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Current Score: BLU 1, RED 0.",
+      "tick": 20957
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] 24:50 remaining; starting round 2.",
+      "tick": 20957
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED's medic DROPPED!",
+      "tick": 27290
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 67 seconds before using it",
+      "tick": 29059
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED lost their uber advantage of 12 seconds",
+      "tick": 33034
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 38 seconds before using it",
+      "tick": 34803
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 45 seconds before using it",
+      "tick": 36037
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "ゆきえ",
+      "text": "누가 메탈워크 하자햇노",
+      "tick": 37471
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "ゆきえ",
+      "text": "뒤로나와.",
+      "tick": 37595
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Noala",
+      "text": "노무현이요",
+      "tick": 37663
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Sol Mos",
+      "text": "ㅋㅋㅋㅋㅋㅋㅋ",
+      "tick": 37667
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "Overrode round timer time to 240 seconds",
+      "tick": 37800
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Current Score: BLU 2, RED 0.",
+      "tick": 37800
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] 20:38 remaining; starting round 3.",
+      "tick": 37800
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Noala",
+      "text": "노무현 뒤로 나와",
+      "tick": 37803
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "저늕아",
+      "text": "저 길 2번잃음",
+      "tick": 38003
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Sol Mos",
+      "text": "저3번",
+      "tick": 38223
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "Shohoku. Practice",
+      "text": "wtf",
+      "tick": 39594
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "Overrode round timer time to 240 seconds",
+      "tick": 45014
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Current Score: BLU 3, RED 0.",
+      "tick": 45014
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] 18:49 remaining; starting round 4.",
+      "tick": 45014
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Noala",
+      "text": "ㅋㅋ",
+      "tick": 47361
+    },
+    {
+      "kind": "TF_Chat_AllSpec",
+      "from": "매생E",
+      "text": "아주빠르게",
+      "tick": 47677
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "Sol Mos",
+      "text": "데모만찍는다이제",
+      "tick": 47874
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 34 seconds before using it",
+      "tick": 51439
+    },
+    {
+      "kind": "TF_Chat_AllSpec",
+      "from": "매생E",
+      "text": "두 부 외 상",
+      "tick": 51580
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 40 seconds before using it",
+      "tick": 51815
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "Noala",
+      "text": "아이코",
+      "tick": 51865
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "저늕아",
+      "text": "2런",
+      "tick": 52424
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "Overrode round timer time to 240 seconds",
+      "tick": 52637
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Current Score: BLU 3, RED 1.",
+      "tick": 52637
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] 16:55 remaining; starting round 5.",
+      "tick": 52637
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 142 seconds before using it",
+      "tick": 65730
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 143 seconds before using it",
+      "tick": 66234
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 85 seconds before using it",
+      "tick": 75677
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 78 seconds before using it",
+      "tick": 75694
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU lost their uber advantage of 12 seconds",
+      "tick": 83807
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 44 seconds before using it",
+      "tick": 86715
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU had uber for 116 seconds before using it",
+      "tick": 90136
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "ゆきえ",
+      "text": "나만 봣어..",
+      "tick": 91501
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "Sol Mos",
+      "text": "내발가락",
+      "tick": 91837
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "ゆきえ",
+      "text": "큰 발",
+      "tick": 92185
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "Sol Mos",
+      "text": "건보츠라들켰다",
+      "tick": 92563
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "ゆきえ",
+      "text": "ㄹㅇ",
+      "tick": 92732
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Sol Mos",
+      "text": "샷건들게요",
+      "tick": 93099
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU lost their uber advantage of 12 seconds",
+      "tick": 95147
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU's medic DROPPED!",
+      "tick": 97305
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU spent 8.0 seconds after spawning before healing",
+      "tick": 99094
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 84 seconds before using it",
+      "tick": 100717
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED's medic DROPPED!",
+      "tick": 107970
+    },
+    {
+      "kind": "TF_Chat_AllSpec",
+      "from": "매생E",
+      "text": "오우",
+      "tick": 108090
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED spent 12.0 seconds after spawning before healing",
+      "tick": 110007
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] BLU's medic DROPPED!",
+      "tick": 112910
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "34ra",
+      "text": "wtf",
+      "tick": 113342
+    },
+    {
+      "kind": "TF_Chat_AllDead",
+      "from": "VOVOtos",
+      "text": "lol",
+      "tick": 113473
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[STV Stats] RED had uber for 46 seconds before using it",
+      "tick": 116665
+    },
+    {
+      "kind": "TF_Chat_AllSpec",
+      "from": "매생E",
+      "text": "ㅋㅋ",
+      "tick": 118805
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "Shohoku. Practice",
+      "text": "3맵 코스 기??",
+      "tick": 120677
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "ゆきえ",
+      "text": "ㄱ",
+      "tick": 120855
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Plugins reloaded.",
+      "tick": 120935
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "[TF2 Competitive Fixes] Preventing whitelist reload",
+      "tick": 120935
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[Matcha] Soap DM loaded.",
+      "tick": 120936
+    },
+    {
+      "kind": "Empty",
+      "from": "",
+      "text": "[ProperPregame] Existing class limits have been saved and will be restored on match start.",
+      "tick": 120936
+    },
+    {
+      "kind": "TF_Chat_All",
+      "from": "",
+      "text": "[LogsTF] Uploading logs...",
+      "tick": 120936
+    }
+  ],
+  "users": {
+    "2": {
+      "classes": {},
+      "name": "MatchaTV",
+      "userId": 2,
+      "steamId": "BOT",
+      "team": "other"
+    },
+    "5": {
+      "classes": {
+        "1": 12
+      },
+      "name": "34ra",
+      "userId": 5,
+      "steamId": "[U:1:112977851]",
+      "team": "blue"
+    },
+    "7": {
+      "classes": {
+        "4": 14
+      },
+      "name": "gb",
+      "userId": 7,
+      "steamId": "[U:1:114097931]",
+      "team": "blue"
+    },
+    "9": {
+      "classes": {
+        "5": 11
+      },
+      "name": "Spes Vanae",
+      "userId": 9,
+      "steamId": "[U:1:1014303278]",
+      "team": "red"
+    },
+    "10": {
+      "classes": {
+        "5": 10
+      },
+      "name": "Don't give up",
+      "userId": 10,
+      "steamId": "[U:1:182770553]",
+      "team": "blue"
+    },
+    "11": {
+      "classes": {},
+      "name": "요즘모짜핫냥이",
+      "userId": 11,
+      "steamId": "[U:1:876237785]",
+      "team": "other"
+    },
+    "14": {
+      "classes": {
+        "3": 23
+      },
+      "name": "VOVOtos",
+      "userId": 14,
+      "steamId": "[U:1:131938770]",
+      "team": "red"
+    },
+    "15": {
+      "classes": {
+        "1": 21,
+        "2": 4,
+        "6": 1,
+        "9": 4
+      },
+      "name": "저늕아",
+      "userId": 15,
+      "steamId": "[U:1:481034290]",
+      "team": "blue"
+    },
+    "16": {
+      "classes": {
+        "1": 19,
+        "7": 2,
+        "9": 1
+      },
+      "name": "ゆきえ",
+      "userId": 16,
+      "steamId": "[U:1:308929020]",
+      "team": "red"
+    },
+    "17": {
+      "classes": {
+        "3": 27
+      },
+      "name": "Sol Mos",
+      "userId": 17,
+      "steamId": "[U:1:162121949]",
+      "team": "blue"
+    },
+    "18": {
+      "classes": {
+        "4": 19
+      },
+      "name": "Noala",
+      "userId": 18,
+      "steamId": "[U:1:1130741006]",
+      "team": "red"
+    },
+    "20": {
+      "classes": {
+        "1": 19,
+        "6": 3,
+        "8": 1,
+        "9": 5
+      },
+      "name": "사랑과 정의 지킴이",
+      "userId": 20,
+      "steamId": "[U:1:113840103]",
+      "team": "red"
+    },
+    "21": {
+      "classes": {},
+      "name": "매생E",
+      "userId": 21,
+      "steamId": "[U:1:137974070]",
+      "team": "other"
+    },
+    "23": {
+      "classes": {
+        "2": 1,
+        "3": 23,
+        "8": 2
+      },
+      "name": "Shohoku. Practice",
+      "userId": 23,
+      "steamId": "[U:1:101090228]",
+      "team": "red"
+    },
+    "24": {
+      "classes": {
+        "3": 25
+      },
+      "name": "₍ᐢᐢ₎. usongi ｡OwO。",
+      "userId": 24,
+      "steamId": "[U:1:250021149]",
+      "team": "blue"
+    }
+  },
+  "deaths": [
+    {
+      "weapon": "sniperrifle",
+      "victim": 20,
+      "assister": null,
+      "killer": 24,
+      "tick": 1
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": 10,
+      "killer": 5,
+      "tick": 2525
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 16,
+      "assister": null,
+      "killer": 17,
+      "tick": 2547
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 18,
+      "assister": 7,
+      "killer": 24,
+      "tick": 2640
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": null,
+      "killer": 20,
+      "tick": 2935
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 20,
+      "assister": 10,
+      "killer": 7,
+      "tick": 3103
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 17,
+      "assister": 9,
+      "killer": 23,
+      "tick": 8129
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": null,
+      "killer": 16,
+      "tick": 8232
+    },
+    {
+      "weapon": "crusaders_crossbow",
+      "victim": 18,
+      "assister": 5,
+      "killer": 10,
+      "tick": 8281
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 15,
+      "assister": null,
+      "killer": 14,
+      "tick": 8727
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 23,
+      "assister": 5,
+      "killer": 7,
+      "tick": 8790
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": null,
+      "killer": 5,
+      "tick": 9661
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": null,
+      "killer": 16,
+      "tick": 11180
+    },
+    {
+      "weapon": "tomislav",
+      "victim": 24,
+      "assister": 9,
+      "killer": 20,
+      "tick": 11265
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 7,
+      "assister": null,
+      "killer": 23,
+      "tick": 11511
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": 23,
+      "killer": 16,
+      "tick": 13385
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 23,
+      "assister": null,
+      "killer": 15,
+      "tick": 13608
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 15,
+      "assister": 18,
+      "killer": 16,
+      "tick": 13765
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 16,
+      "assister": null,
+      "killer": 7,
+      "tick": 13924
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": null,
+      "killer": 5,
+      "tick": 13954
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 20,
+      "assister": 5,
+      "killer": 17,
+      "tick": 14450
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 16,
+      "assister": 24,
+      "killer": 5,
+      "tick": 17108
+    },
+    {
+      "weapon": "world",
+      "victim": 23,
+      "assister": 10,
+      "killer": 5,
+      "tick": 19078
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 16,
+      "assister": 5,
+      "killer": 7,
+      "tick": 20005
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 14,
+      "assister": null,
+      "killer": 24,
+      "tick": 20325
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 9,
+      "assister": null,
+      "killer": 15,
+      "tick": 20472
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 18,
+      "assister": null,
+      "killer": 17,
+      "tick": 20560
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 20,
+      "assister": 5,
+      "killer": 17,
+      "tick": 20560
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 5,
+      "assister": 16,
+      "killer": 20,
+      "tick": 22984
+    },
+    {
+      "weapon": "world",
+      "victim": 17,
+      "assister": null,
+      "killer": 16,
+      "tick": 23056
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 18,
+      "assister": 24,
+      "killer": 7,
+      "tick": 23151
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 14,
+      "assister": 15,
+      "killer": 24,
+      "tick": 23347
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": null,
+      "killer": 20,
+      "tick": 23506
+    },
+    {
+      "weapon": "world",
+      "victim": 20,
+      "assister": null,
+      "killer": 24,
+      "tick": 23543
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 7,
+      "assister": 9,
+      "killer": 16,
+      "tick": 25171
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 23,
+      "assister": null,
+      "killer": 5,
+      "tick": 26741
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 9,
+      "assister": 10,
+      "killer": 17,
+      "tick": 27290
+    },
+    {
+      "weapon": "pistol_scout",
+      "victim": 24,
+      "assister": null,
+      "killer": 20,
+      "tick": 27592
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 15,
+      "assister": null,
+      "killer": 14,
+      "tick": 27653
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 14,
+      "assister": null,
+      "killer": 7,
+      "tick": 28989
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": null,
+      "killer": 24,
+      "tick": 34381
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 24,
+      "assister": 16,
+      "killer": 18,
+      "tick": 34859
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 20,
+      "assister": null,
+      "killer": 17,
+      "tick": 35981
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 9,
+      "assister": 10,
+      "killer": 5,
+      "tick": 36061
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 16,
+      "assister": null,
+      "killer": 7,
+      "tick": 36316
+    },
+    {
+      "weapon": "pistol_scout",
+      "victim": 14,
+      "assister": 10,
+      "killer": 5,
+      "tick": 36407
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 23,
+      "assister": null,
+      "killer": 5,
+      "tick": 37079
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 18,
+      "assister": null,
+      "killer": 5,
+      "tick": 37181
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 23,
+      "assister": null,
+      "killer": 7,
+      "tick": 39227
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 9,
+      "assister": 17,
+      "killer": 5,
+      "tick": 39911
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": 16,
+      "killer": 20,
+      "tick": 40158
+    },
+    {
+      "weapon": "crusaders_crossbow",
+      "victim": 14,
+      "assister": null,
+      "killer": 10,
+      "tick": 40437
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 5,
+      "assister": 9,
+      "killer": 16,
+      "tick": 43521
+    },
+    {
+      "weapon": "world",
+      "victim": 14,
+      "assister": null,
+      "killer": 24,
+      "tick": 43551
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 16,
+      "assister": 24,
+      "killer": 7,
+      "tick": 43747
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 18,
+      "assister": null,
+      "killer": 15,
+      "tick": 43796
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 23,
+      "assister": 10,
+      "killer": 7,
+      "tick": 44142
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 20,
+      "assister": null,
+      "killer": 24,
+      "tick": 44327
+    },
+    {
+      "weapon": "maxgun",
+      "victim": 9,
+      "assister": null,
+      "killer": 15,
+      "tick": 44419
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 16,
+      "assister": 24,
+      "killer": 7,
+      "tick": 47065
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 24,
+      "assister": 16,
+      "killer": 14,
+      "tick": 47197
+    },
+    {
+      "weapon": "world",
+      "victim": 17,
+      "assister": null,
+      "killer": 18,
+      "tick": 47227
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 5,
+      "assister": 9,
+      "killer": 14,
+      "tick": 47658
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 23,
+      "assister": 15,
+      "killer": 7,
+      "tick": 48409
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 7,
+      "assister": null,
+      "killer": 23,
+      "tick": 48422
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 17,
+      "assister": null,
+      "killer": 14,
+      "tick": 50180
+    },
+    {
+      "weapon": "sniperrifle",
+      "victim": 18,
+      "assister": 5,
+      "killer": 15,
+      "tick": 51274
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 14,
+      "assister": null,
+      "killer": 24,
+      "tick": 51441
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 23,
+      "assister": 10,
+      "killer": 5,
+      "tick": 51814
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": null,
+      "killer": 20,
+      "tick": 52030
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 7,
+      "assister": null,
+      "killer": 20,
+      "tick": 52072
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 15,
+      "assister": null,
+      "killer": 20,
+      "tick": 52206
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 10,
+      "assister": null,
+      "killer": 16,
+      "tick": 52560
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 5,
+      "assister": null,
+      "killer": 20,
+      "tick": 52615
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 14,
+      "assister": null,
+      "killer": 7,
+      "tick": 54773
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 15,
+      "assister": 23,
+      "killer": 14,
+      "tick": 54778
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": 7,
+      "killer": 17,
+      "tick": 54802
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": null,
+      "killer": 20,
+      "tick": 55310
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": 9,
+      "killer": 16,
+      "tick": 55727
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 5,
+      "assister": null,
+      "killer": 18,
+      "tick": 55807
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 16,
+      "assister": 5,
+      "killer": 15,
+      "tick": 58086
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": null,
+      "killer": 20,
+      "tick": 58909
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": null,
+      "killer": 17,
+      "tick": 60310
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 16,
+      "assister": null,
+      "killer": 7,
+      "tick": 60445
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": null,
+      "killer": 20,
+      "tick": 60569
+    },
+    {
+      "weapon": "shotgun_primary",
+      "victim": 23,
+      "assister": 10,
+      "killer": 15,
+      "tick": 63074
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": 17,
+      "killer": 5,
+      "tick": 63207
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": 18,
+      "killer": 16,
+      "tick": 63580
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 18,
+      "assister": 5,
+      "killer": 7,
+      "tick": 64220
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": 10,
+      "killer": 5,
+      "tick": 65715
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 16,
+      "assister": null,
+      "killer": 7,
+      "tick": 66101
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": 23,
+      "killer": 20,
+      "tick": 69641
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": 15,
+      "killer": 17,
+      "tick": 73301
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 17,
+      "assister": 20,
+      "killer": 14,
+      "tick": 73323
+    },
+    {
+      "weapon": "world",
+      "victim": 24,
+      "assister": 14,
+      "killer": 16,
+      "tick": 74503
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 15,
+      "assister": 14,
+      "killer": 16,
+      "tick": 74610
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 7,
+      "assister": 16,
+      "killer": 20,
+      "tick": 75770
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 5,
+      "assister": 20,
+      "killer": 16,
+      "tick": 76303
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 16,
+      "assister": 5,
+      "killer": 17,
+      "tick": 76412
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": 16,
+      "killer": 20,
+      "tick": 76483
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 24,
+      "assister": 20,
+      "killer": 18,
+      "tick": 76908
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 10,
+      "assister": null,
+      "killer": 20,
+      "tick": 77326
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 9,
+      "assister": null,
+      "killer": 7,
+      "tick": 78114
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 18,
+      "assister": null,
+      "killer": 7,
+      "tick": 78161
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 7,
+      "assister": null,
+      "killer": 7,
+      "tick": 78161
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 15,
+      "assister": null,
+      "killer": 23,
+      "tick": 82936
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 14,
+      "assister": 5,
+      "killer": 7,
+      "tick": 83694
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 16,
+      "assister": 24,
+      "killer": 5,
+      "tick": 86041
+    },
+    {
+      "weapon": "world",
+      "victim": 24,
+      "assister": 9,
+      "killer": 20,
+      "tick": 86800
+    },
+    {
+      "weapon": "world",
+      "victim": 17,
+      "assister": null,
+      "killer": 23,
+      "tick": 86910
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 23,
+      "assister": 15,
+      "killer": 5,
+      "tick": 87968
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 24,
+      "assister": null,
+      "killer": 16,
+      "tick": 89907
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 18,
+      "assister": 10,
+      "killer": 7,
+      "tick": 90159
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 5,
+      "assister": 20,
+      "killer": 23,
+      "tick": 90772
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 7,
+      "assister": null,
+      "killer": 23,
+      "tick": 91034
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 16,
+      "assister": null,
+      "killer": 17,
+      "tick": 91138
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 17,
+      "assister": 16,
+      "killer": 14,
+      "tick": 91243
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 18,
+      "assister": 7,
+      "killer": 24,
+      "tick": 94518
+    },
+    {
+      "weapon": "world",
+      "victim": 24,
+      "assister": null,
+      "killer": 14,
+      "tick": 95359
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": 10,
+      "killer": 24,
+      "tick": 97297
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 10,
+      "assister": null,
+      "killer": 23,
+      "tick": 97305
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 16,
+      "assister": 15,
+      "killer": 5,
+      "tick": 97402
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 17,
+      "assister": 14,
+      "killer": 16,
+      "tick": 100815
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 16,
+      "assister": null,
+      "killer": 17,
+      "tick": 100821
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 18,
+      "assister": 15,
+      "killer": 5,
+      "tick": 101321
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 15,
+      "assister": 18,
+      "killer": 14,
+      "tick": 101396
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 20,
+      "assister": 24,
+      "killer": 7,
+      "tick": 101465
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 7,
+      "assister": 23,
+      "killer": 14,
+      "tick": 101699
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 23,
+      "assister": 5,
+      "killer": 24,
+      "tick": 101718
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 14,
+      "assister": null,
+      "killer": 5,
+      "tick": 101838
+    },
+    {
+      "weapon": "crusaders_crossbow",
+      "victim": 20,
+      "assister": 5,
+      "killer": 10,
+      "tick": 104583
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 24,
+      "assister": 18,
+      "killer": 14,
+      "tick": 105393
+    },
+    {
+      "weapon": "maxgun",
+      "victim": 14,
+      "assister": null,
+      "killer": 15,
+      "tick": 106144
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 17,
+      "assister": 16,
+      "killer": 23,
+      "tick": 106956
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 10,
+      "assister": null,
+      "killer": 20,
+      "tick": 107925
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 9,
+      "assister": null,
+      "killer": 7,
+      "tick": 107970
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 15,
+      "assister": null,
+      "killer": 20,
+      "tick": 108061
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 20,
+      "assister": null,
+      "killer": 24,
+      "tick": 108189
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 17,
+      "assister": null,
+      "killer": 14,
+      "tick": 109259
+    },
+    {
+      "weapon": "obj_sentrygun",
+      "victim": 23,
+      "assister": null,
+      "killer": 15,
+      "tick": 112758
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 18,
+      "assister": 15,
+      "killer": 24,
+      "tick": 112882
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 10,
+      "assister": null,
+      "killer": 14,
+      "tick": 112910
+    },
+    {
+      "weapon": "pickaxe",
+      "victim": 5,
+      "assister": null,
+      "killer": 14,
+      "tick": 113060
+    },
+    {
+      "weapon": "shotgun_primary",
+      "victim": 14,
+      "assister": null,
+      "killer": 15,
+      "tick": 113264
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 20,
+      "assister": 10,
+      "killer": 5,
+      "tick": 115106
+    },
+    {
+      "weapon": "quake_rl",
+      "victim": 15,
+      "assister": null,
+      "killer": 23,
+      "tick": 116876
+    },
+    {
+      "weapon": "tf_projectile_pipe_remote",
+      "victim": 16,
+      "assister": 10,
+      "killer": 7,
+      "tick": 117213
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 18,
+      "assister": null,
+      "killer": 17,
+      "tick": 117324
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 17,
+      "assister": 9,
+      "killer": 14,
+      "tick": 117333
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 14,
+      "assister": null,
+      "killer": 24,
+      "tick": 117415
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 23,
+      "assister": 5,
+      "killer": 7,
+      "tick": 117656
+    },
+    {
+      "weapon": "iron_bomber",
+      "victim": 20,
+      "assister": null,
+      "killer": 7,
+      "tick": 118317
+    },
+    {
+      "weapon": "crusaders_crossbow",
+      "victim": 7,
+      "assister": 20,
+      "killer": 9,
+      "tick": 118478
+    },
+    {
+      "weapon": "scout_sword",
+      "victim": 9,
+      "assister": null,
+      "killer": 5,
+      "tick": 118696
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 16,
+      "assister": 10,
+      "killer": 5,
+      "tick": 119348
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 18,
+      "assister": null,
+      "killer": 15,
+      "tick": 119453
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 15,
+      "assister": null,
+      "killer": 14,
+      "tick": 119631
+    },
+    {
+      "weapon": "world",
+      "victim": 23,
+      "assister": 10,
+      "killer": 5,
+      "tick": 119813
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 24,
+      "assister": null,
+      "killer": 14,
+      "tick": 119980
+    },
+    {
+      "weapon": "scattergun",
+      "victim": 20,
+      "assister": null,
+      "killer": 5,
+      "tick": 120122
+    },
+    {
+      "weapon": "tf_projectile_rocket",
+      "victim": 14,
+      "assister": null,
+      "killer": 17,
+      "tick": 120197
+    }
+  ],
+  "rounds": [
+    {
+      "winner": "blue",
+      "length": 299.34003,
+      "end_tick": 20290
+    },
+    {
+      "winner": "blue",
+      "length": 242.64001,
+      "end_tick": 37133
+    },
+    {
+      "winner": "blue",
+      "length": 98.20502,
+      "end_tick": 44346
+    },
+    {
+      "winner": "red",
+      "length": 104.339966,
+      "end_tick": 51970
+    }
+  ],
+  "startTick": 27069,
+  "intervalPerTick": 0.015,
+  "pauses": []
+}
