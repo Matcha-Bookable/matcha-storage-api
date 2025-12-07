@@ -44,7 +44,7 @@ exports.getPresignedUploadUrl = async (req, res) => {
         }
 
         const storagePath = `${bookingID}/${fileName}.gz`
-        const presignedUrl = await generatePresignedUploadUrl(process.env.R2_DEMO_BUCKET, storagePath, 180)
+        const presignedUrl = await generatePresignedUploadUrl(process.env.R2_DEMO_BUCKET, storagePath, 60)
 
         return res.status(200).json({
             status: "success",
