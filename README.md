@@ -18,7 +18,8 @@ Logs:
 Demos:
 - `GET /api/demos` - Retrieve all demos' metadatas (optionally add "parsed=true").
 - `GET /api/demos/:id/metadata` - Retrieve the demo's metadata
-- `POST /api/demos` - Upload a demo
+- `POST /api/demos/presigned-url` - Get a presigned URL for uploading a demo directly to R2
+- `POST /api/demos` - Save demo metadata after client uploads to R2
 - `DELETE /api/demos/:id` - Delete a demo
 - `DELETE /api/booking/:id` - Delete all demos from a bookingID
 

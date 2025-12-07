@@ -66,14 +66,16 @@ exports.uploadLog = async (req, res) => {
         })
 
             await newLog.save()
+
+
+            return res.status(201).json({
+            status: "success",
+            log: newLog
+            })
+            
         } catch (DuplicateKeyError) {
             return res.status(409).json({ status: "error", message: "document already exists" }) 
         }
-
-        return res.status(201).json({
-            status: "success",
-            log: newLog
-        })
 
     } catch (error) {
         console.log(error)

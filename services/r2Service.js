@@ -4,6 +4,7 @@ const {
   DeleteObjectCommand,
   waitUntilObjectNotExists,
 } = require("@aws-sdk/client-s3")
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner")
 
 const newS3Client = function () {
   return new S3Client({
@@ -62,4 +63,27 @@ const deleteObject = async (bucketName, fileName) => {
     }
 }
 
-module.exports = { uploadObject, deleteObject }
+/**
+ * Generate a presigned URL for uploading to R2
+ * @param {string} bucketName
+ * @param {string} fileName
+ * @param {number} expiresIn - URL expiration time in seconds (default: 300)
+ * @returns {Promise<string>} The presigned URL
+ */
+const generatePresignedUploadUrl = async (bucketName, fileName, expiresIn = 300) => {
+  const client = newS3Client()
+
+  const command = new PutObjectCommand({
+    Bucket: bucketName,
+    Key: fileName,
+  })
+
+  try {
+    const presignedUrl = await getSignedUrl(client, command, { expiresIn })
+    return presignedUrl
+  } catch (error) {
+    throw error
+  }
+}
+
+module.exports = { uploadObject, deleteObject, generatePresignedUploadUrl }

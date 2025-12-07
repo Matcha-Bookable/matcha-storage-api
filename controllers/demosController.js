@@ -1,13 +1,5 @@
 const Demo = require("../models/Demo")
-const { uploadObject, deleteObject } = require("../services/r2Service")
-const { parseDemo } = require('../services/demoParser');
-const fs = require('fs').promises;
-const path = require('path');
-const os = require('os');
-const zlib = require('zlib');
-const { promisify } = require('util');
-
-const gzipAsync = promisify(zlib.gzip);
+const { uploadObject, deleteObject, generatePresignedUploadUrl } = require("../services/r2Service")
 
 exports.getAllDemos = async (req, res) => {
     try {
@@ -39,52 +31,70 @@ exports.getAllDemos = async (req, res) => {
     }
 }
 
-exports.uploadDemo = async (req, res) => {
+exports.getPresignedUploadUrl = async (req, res) => {
     try {
-        const bookingID = req.body.bookingID
+        const { bookingID, fileName } = req.body
 
         if (!bookingID) {
             return res.status(400).json({ status: "error", message: "bookingID is required" })
         }
 
-        if (!req.file) {
-            return res.status(400).json({ status: "error", message: "No file uploaded" })
+        if (!fileName) {
+            return res.status(400).json({ status: "error", message: "fileName is required" })
         }
 
-        // demos metadatas
-        const fileName = req.file.originalname
-        const fileContent = req.file.buffer
-        const fileSize = req.file.size
+        const storagePath = `${bookingID}/${fileName}.gz`
+        const presignedUrl = await generatePresignedUploadUrl(process.env.R2_DEMO_BUCKET, storagePath, 180)
+
+        return res.status(200).json({
+            status: "success",
+            presignedUrl: presignedUrl,
+            storagePath: storagePath
+        })
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: "error", message: "Failed to generate presigned URL" })
+    }
+}
+
+exports.uploadDemo = async (req, res) => {
+    try {
+        const { bookingID, demoName, size, storagePath, parsed } = req.body
+
+        if (!bookingID) {
+            return res.status(400).json({ status: "error", message: "bookingID is required" })
+        }
+
+        if (!demoName) {
+            return res.status(400).json({ status: "error", message: "demoName is required" })
+        }
+
+        if (!size) {
+            return res.status(400).json({ status: "error", message: "size is required" })
+        }
+
+        if (!storagePath) {
+            return res.status(400).json({ status: "error", message: "storagePath is required" })
+        }
 
         // validate the file size
-        if (fileSize > 200000000 || fileSize < 5000000) {
+        if (size > 200000000 || size < 5000000) {
             return res.status(400).json({ status: "error", message: "File size should be between 5MB and 200 MB" })
         }
 
         // Behind proxy
         const sourceAddress = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip || req.connection.remoteAddress
-        const bucketName = process.env.R2_DEMO_BUCKET
-        const storagePath = `${bookingID}/${fileName}.gz`
-        
-        // upload
-        await uploadObject(bucketName, storagePath, await gzipAsync(fileContent))
-
-        // store in RAM
-        const tempDir = os.tmpdir();
-        const tempFilePath = path.join(tempDir, `demo-${Date.now()}-${fileName}`);
         
         try {
-            await fs.writeFile(tempFilePath, fileContent);
-            const parsedData = await parseDemo(tempFilePath);
-
             const newDemo = new Demo({
                 bookingID: bookingID,
-                demoName: fileName,
+                demoName: demoName,
                 sourceAddress: sourceAddress,
-                size: fileSize,
+                size: size,
                 storagePath: storagePath,
                 uploadDate: new Date(),
-                parsed: parsedData
+                parsed: parsed
             })
 
             await newDemo.save()
@@ -96,13 +106,6 @@ exports.uploadDemo = async (req, res) => {
             
         } catch (DuplicateKeyError) {
             return res.status(409).json({ status: "error", message: "document already exists" }) 
-        } finally {
-            // Clean up temp file
-            try {
-                await fs.unlink(tempFilePath);
-            } catch (err) {
-                console.error('Failed to delete temp file:', err);
-            }
         }
 
     } catch (error) {
