@@ -7,7 +7,7 @@ exports.getAllLogs = async (req, res) => {
 
         if (logs.length === 0) {
             return res.status(404).json({
-                status: "success",
+                status: "not found",
                 message: "Logs are not populated yet",
                 logs: logs
             })
@@ -88,10 +88,16 @@ exports.getLog = async (req, res) => {
         const log = await Log.findById(req.params.id)
 
         if (log.length == 0) {
-            return res.status(404).json(log)
+            return res.status(404).json({
+                status: "not found",
+                message: "LogID not found"
+            })
         }
         else {
-            return res.status(200).json(log)
+            return res.status(200).json({
+                status: "success",
+                log: log
+            })
         }
 
     } catch (error) {
@@ -108,7 +114,10 @@ exports.deleteLog = async (req, res) => {
         const droppedLog = await Log.findByIdAndDelete(id)
 
         if (!droppedLog) {
-            return res.status(404).json({ error: "Log not found" })
+            return res.status(404).json({
+                status: "not found",
+                message: "Log not found"
+            })
         }
 
         await deleteObject(process.env.R2_LOG_BUCKET, droppedLog.storagePath)
@@ -120,46 +129,3 @@ exports.deleteLog = async (req, res) => {
         return res.status(500).json({ status: "error", message: "Failed to delete log" })
     }
 }
-
-exports.deleteBooking = async (req, res) => {
-    try {
-        const id = req.params.id
-
-        const logs = await Log.find({ bookingID: id })
-
-        if (logs.length == 0) {
-            return res.status(404).json({ status: "error", message: "No logs found for this bookingID" })
-        }
-
-        for (const log of logs) {
-            await deleteObject(process.env.R2_LOG_BUCKET, log.storagePath)
-        }
-
-        await Log.deleteMany({ bookingID: id })
-
-        return res.status(200).json({ status: "success", message: `Deleted all logs for bookingID: ${id}` })
-
-    } catch (error) {
-        console.log(error)
-        return res.status(500).json({ status: "error", message: "Failed to booking logs" })
-    }
-}
-
-// exports.downloadLog = async (req, res) => {
-//     try {
-//         const id = req.params.id
-//         const log = await Log.findById(id)
-
-//         if (log.length == 0) {
-//             return res.status(404).json({ status: "error", message: "Log not found" })
-//         }
-
-//         // Work in progress
-
-//         return 
-
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(500).json({ status: "error", message: "Failed to download log" })
-//     }
-// }

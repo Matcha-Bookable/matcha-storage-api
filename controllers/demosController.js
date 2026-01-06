@@ -1,19 +1,17 @@
 const Demo = require("../models/Demo")
-const { uploadObject, deleteObject, generatePresignedUploadUrl } = require("../services/r2Service")
+const { deleteObject, generatePresignedUploadUrl } = require("../services/r2Service")
 
 exports.getAllDemos = async (req, res) => {
     try {
-        // We should allow the option to not show parsed data
-        const parsed = req.query.parsed
+        const page = parseInt(req.query.page) || 1
+        const limit = 100
+        const skip = (page - 1) * limit
 
-        var demos
-        
-        if (parsed) {
-            demos = await Demo.find()
-        }
-        else {
-            demos = await Demo.find({}, { parsed: 0 })
-        }
+        const total = await Demo.countDocuments()
+        const demos = await Demo.find({}, { parsed: 0 })
+            .sort({ uploadDate: -1 })
+            .skip(skip)
+            .limit(limit)
 
         if (demos.length == 0) {
             return res.status(404).json({
@@ -23,8 +21,16 @@ exports.getAllDemos = async (req, res) => {
             })
         }
 
-        return res.status(200).json(demos)
-        
+        return res.status(200).json({
+            status: "success",
+            pagination: {
+                page: page,
+                totalPages: Math.ceil(total / limit),
+                total: total,
+            },
+            demos: demos
+        })
+
     } catch (error) {
         console.log(error)
         return res.status(500).json({ status: "error", message: "Failed to retrieve demos"})
@@ -116,13 +122,19 @@ exports.uploadDemo = async (req, res) => {
 
 exports.getDemo = async (req, res) => {
     try {
-        const demo = await Demo.findById(req.params.id)
+        var demo = await Demo.findById(req.params.id) // probably better to just include it for one demo
 
         if (demo.length == 0) {
-            return res.status(404).json(demo)
+            return res.status(404).json({
+                status: "not found",
+                message: "demoID not found"
+            })
         }
         else {
-            return res.status(200).json(demo)
+            return res.status(200).json({
+                status: "success",
+                demo: demo
+            })
         }
 
     } catch (error) {
@@ -131,14 +143,35 @@ exports.getDemo = async (req, res) => {
     }
 }
 
+exports.downloadDemo = async (req, res) => {
+    try {
+        const demo = await Demo.findById(req.params.id)
+
+        if (!demo) {
+            return res.status(404).json({
+                status: "not found",
+                message: "DemoID not found"
+            })
+        }
+
+        const downloadUrl = `${process.env.DEMO_BASE_URL}/${demo.storagePath}`
+
+        return res.redirect(downloadUrl)
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: "error", message: "Failed to download demo" })
+    }
+}
+
 exports.deleteDemo = async (req, res) => {
     try {
         const id = req.params.id
-        
+
         const droppedDemo = await Demo.findByIdAndDelete(id)
 
         if (!droppedDemo) {
-            return res.status(404).json({ error: "Demo not found" })
+            return res.status(404).json({ status: "not found", message: "DemoID not found" })
         }
 
         await deleteObject(process.env.R2_DEMO_BUCKET, droppedDemo.storagePath)
@@ -147,29 +180,5 @@ exports.deleteDemo = async (req, res) => {
     } catch (error) {
         console.log(error)
         return res.status(500).json({ status: "error", message: "Failed to delete demo" })
-    }
-}
-
-exports.deleteBooking = async (req, res) => {
-    try {
-        const id = req.params.id
-
-        const demos = await Demo.find({ bookingID: id })
-
-        if (demos.length == 0) {
-            return res.status(404).json({ status: "error", message: "No demos found for this bookingID" })
-        }
-
-        for (const demo of demos) {
-            await deleteObject(process.env.R2_DEMO_BUCKET, demo.storagePath)
-        }
-
-        await Demo.deleteMany({ bookingID: id })
-
-        return res.status(200).json({ status: "success", message: `Deleted all demos for bookingID: ${id}` })
-
-    } catch (error) {
-        console.log(error)
-        return res.status(500).json({ status: "error", message: "Failed to delete demos" })
     }
 }

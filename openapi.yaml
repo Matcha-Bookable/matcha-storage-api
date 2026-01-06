@@ -1,0 +1,388 @@
+openapi: 3.0.3
+info:
+  title: Matcha Storage API
+  version: v0
+  description: |
+        ### Version 0
+        This is the storage backend API for Matcha Bookable's competitive service. Storage of logs and demos are
+        handled by this API.
+
+        Although not mean't to be exposed publicily, we have 3 endpoints that are available for public use.
+        The rest are authenicated.
+
+        ### Authentication
+        For those with permission to use those authenicated endpoints.
+        A bearer token will be required in the Authorisation header.
+        
+        ### Note
+        Earliest recorded demos are on **2026-01-06**
+
+servers:
+  - url: https://storage.matcha-bookable.com
+    description: Production server
+  - url: http://172.30.11.12:8080
+    description: Local development server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: apikey
+
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      description: Returns the health status of the service and MongoDB connection
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Service is healthy
+        '503':
+          description: Service is unhealthy
+
+  /api/logs:
+    get:
+      summary: Get all logs
+      description: Retrieve metadata for all logs
+      tags:
+        - Logs
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Logs retrieved successfully
+        '404':
+          description: No logs found
+        '401':
+          description: Unauthorized
+
+    post:
+      summary: Upload a log
+      description: Upload a log file with metadata
+      tags:
+        - Logs
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+                - bookingID
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Log file (1 byte - 10 MB)
+                bookingID:
+                  type: integer
+                  minimum: 1
+                  description: Booking ID to associate with the log
+      responses:
+        '201':
+          description: Log uploaded successfully
+        '400':
+          description: Bad request
+        '409':
+          description: Document already exists
+        '401':
+          description: Unauthorized
+
+  /api/logs/{id}:
+    get:
+      summary: Get a log
+      description: Retrieve metadata for a specific log
+      tags:
+        - Logs
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Log ID
+      responses:
+        '200':
+          description: Log retrieved successfully
+        '404':
+          description: Log not found
+        '401':
+          description: Unauthorized
+
+    delete:
+      summary: Delete a log
+      description: Delete a specific log and its file from storage
+      tags:
+        - Logs
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Log ID
+      responses:
+        '200':
+          description: Log deleted successfully
+        '404':
+          description: Log not found
+        '401':
+          description: Unauthorized
+
+  /api/demos:
+    get:
+      summary: Get all demos
+      description: Retrieve metadata for all demos with pagination (100 per page, excludes parsed data)
+      tags:
+        - Demos
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number (100 results per page)
+      responses:
+        '200':
+          description: Demos retrieved successfully
+        '404':
+          description: No demos found
+
+    post:
+      summary: Save demo metadata
+      description: Save demo metadata after client uploads to R2
+      tags:
+        - Demos
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - bookingID
+                - demoName
+                - size
+                - storagePath
+              properties:
+                bookingID:
+                  type: integer
+                  minimum: 1
+                demoName:
+                  type: string
+                size:
+                  type: integer
+                storagePath:
+                  type: string
+                parsed:
+                  type: object
+                  description: Optional parsed demo data
+      responses:
+        '201':
+          description: Demo metadata saved successfully
+        '400':
+          description: Bad request
+        '409':
+          description: Document already exists
+        '401':
+          description: Unauthorized
+
+  /api/demos/{id}:
+    get:
+      summary: Get a demo
+      description: Retrieve metadata for a specific demo, this includes the parsed data
+      tags:
+        - Demos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Demo ID
+      responses:
+        '200':
+          description: Demo retrieved successfully
+        '404':
+          description: Demo not found
+
+    delete:
+      summary: Delete a demo
+      description: Delete a specific demo and its file from storage
+      tags:
+        - Demos
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Demo ID
+      responses:
+        '200':
+          description: Demo deleted successfully
+        '404':
+          description: Demo not found
+        '401':
+          description: Unauthorized
+
+  /api/demos/{id}/download:
+    get:
+      summary: Download a demo
+      description: Redirects to the demo file download URL
+      tags:
+        - Demos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Demo ID
+      responses:
+        '302':
+          description: Redirect to demo download URL
+        '404':
+          description: Demo not found
+
+  /api/demos/presigned-url:
+    post:
+      summary: Get presigned URL
+      description: Get a presigned URL for uploading a demo directly to R2
+      tags:
+        - Demos
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - bookingID
+                - fileName
+              properties:
+                bookingID:
+                  type: integer
+                  minimum: 1
+                fileName:
+                  type: string
+      responses:
+        '200':
+          description: Presigned URL generated successfully
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+
+  /api/bookings:
+    get:
+      summary: Get all bookings
+      description: Retrieve all bookings with their associated logs and demos
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Bookings retrieved successfully
+        '404':
+          description: No bookings found
+        '401':
+          description: Unauthorized
+
+  /api/bookings/{id}:
+    get:
+      summary: Get a booking
+      description: Retrieve a specific booking with its logs and demos
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Booking ID
+      responses:
+        '200':
+          description: Booking retrieved successfully
+        '404':
+          description: Booking not found
+        '401':
+          description: Unauthorized
+
+  /api/bookings/{id}/logs:
+    delete:
+      summary: Delete booking logs
+      description: Delete all logs for a specific booking
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Booking ID
+      responses:
+        '200':
+          description: Logs deleted successfully
+        '404':
+          description: No logs found for this booking
+        '401':
+          description: Unauthorized
+
+  /api/bookings/{id}/demos:
+    delete:
+      summary: Delete booking demos
+      description: Delete all demos for a specific booking
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Booking ID
+      responses:
+        '200':
+          description: Demos deleted successfully
+        '404':
+          description: No demos found for this booking
+        '401':
+          description: Unauthorized
+
+tags:
+  - name: Health
+    description: Health check endpoints
+  - name: Logs
+    description: Log file management
+  - name: Demos
+    description: Demo file management
+  - name: Bookings
+    description: Booking aggregation and cascade operations

@@ -5,15 +5,16 @@ const demosController = require("../controllers/demosController")
 const { uploadSingle } = require("../middleware/uploadMiddleware")
 const authMiddleware = require("../middleware/authMiddleware")
 
-router.use(authMiddleware) // All endpoints require auth
 router.use(express.json()) // Parse JSON bodies
 
+// Exposed to public
 router.get("/", demosController.getAllDemos) // list all Demos
-router.post("/presigned-url", demosController.getPresignedUploadUrl) // get presigned URL for upload
-router.post("/", demosController.uploadDemo) // save demo metadata after client upload
-router.get("/:id/metadata", demosController.getDemo) // return a log's metadata
-router.delete("/:id", demosController.deleteDemo) // delete a log
-router.delete("/booking/:id", demosController.deleteBooking) // delete all demos from a bookingID
-// router.get("/:id", demosController.downloadDemo) // download the demo directly
+router.get("/:id", demosController.getDemo) // return a demo's metadata
+router.get("/:id/download", demosController.downloadDemo) // get demo download URL
+
+// Require auth
+router.post("/presigned-url", authMiddleware, demosController.getPresignedUploadUrl) // get presigned URL for upload
+router.post("/", authMiddleware, demosController.uploadDemo) // save demo metadata after client upload
+router.delete("/:id", authMiddleware, demosController.deleteDemo) // delete a demo
 
 module.exports = router

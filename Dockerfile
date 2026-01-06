@@ -8,6 +8,7 @@ RUN npm install --production
 COPY . .
 
 ENV MONGO_URI=""
+ENV DEMO_BASE_URL=""
 ENV R2_LOG_BUCKET=""
 ENV R2_DEMO_BUCKET=""
 ENV R2_ACCOUNT_ID=""
